@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_MVVM_Combo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF Model-ViewModel-Model DataBinding Example" Height="350" Width="525"
+        DataContext="{Binding ViewModel, Source={StaticResource Locator}}">
+    <!-- Anfang
+    Mit DataContext="{Binding ViewModel, Source={StaticResource Locator}}" wird der DataContext auf das ViewModel Property des Locator gesetzt.
+    Der Locator ist eine Resource, die in der App.xaml referenziert wird.
+    Der Locator wird dann zu einer Instanz der Klasse ViewModelLocator, die das ViewModel Property enthält.
+    Das ViewModel Property enthält einen Konstruktor, der eine Instanz der Klasse ViewModel zurückgibt.
+    Damit wird eine Objekt instanziert aus der Klasse ViewModel, die dann als DataContext für das Window dient.
+    ===> weiter in Zeile 7 in ViewModelLocator.cs
+    -->
+
+    <StackPanel>
+        <ComboBox DisplayMemberPath="FormattedName" Width="200" Height="50" ItemsSource="{Binding EmployeeCollection}" />
+    </StackPanel>
+    <!-- 
+    Die ItemsSource Property des ComboBoxes wird an die EmployeeCollection Property des ViewModels gebunden. 
+    Mit DisplayMemberPath="FormattedName wählen wir die Property aus, die im ComboBox angezeigt werden soll. 
+    Wir sagen der Combobox also, dass sie die FormattedName Property der EmployeeCollection anzeigen soll.
+    Da die EmployeeCollection eine Liste von Employee Objekten ist, können wir für jedes Employee Objekt die FormattedName Property anzeigen lassen.
+    Hinter der EmployeeCollection Property verbirgt sich Logik die uns ID+Vorname+Nachname als einen String zurückgibt,
+    so weiß die Combobox, was sie anzeigen soll. 
+    Die Combobox bekommt also imprinzip eine Liste von Strings, die sie anzeigen soll. (ID+Vorname+Nachname)
+    -->
+    
+</Window>
