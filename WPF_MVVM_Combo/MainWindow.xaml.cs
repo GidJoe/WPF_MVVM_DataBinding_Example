@@ -1,5 +1,8 @@
 ﻿using System.Windows;
 using WPF_MVVM_Combo;
+/* ACHTUNG ACHTUNG 
+        Bitte im DatabseHelper den Pfand zur Datenbank anpassen.
+*/
 
 namespace WPF_MVVM_Combo
 {

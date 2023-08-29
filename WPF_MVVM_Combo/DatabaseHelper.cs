@@ -34,8 +34,8 @@ namespace WPF_MVVM_Combo
 {
     public class DatabaseHelper
     {
-
-        private const string ConnectionString = "Data Source=C:\\Users\\marc1\\RiderProjects\\WPF_MVVM_Combo\\WPF_MVVM_Combo\\employee.db;Version=3;";
+        // Bitte Pfad anpassen zur Datenbank anpassen
+        private const string ConnectionString = "Data Source=C:\\Users\\marc1\\Desktop\\WPF_MVVM_Combo\\WPF_MVVM_Combo\\employee.db;Version=3;";
 
         public List<Employee> GetAllEmployees()
         {
